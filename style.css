@@ -1,6 +1,6 @@
 body {
   font-family: "Arial", sans-serif;
-  background-color: #002147; 
+  background-color: #002147;
   display: flex;
   justify-content: center;
   color: #ffffff;
@@ -61,40 +61,45 @@ body {
   height: 100%;
 }
 
-* {margin:0;padding:0;box-sizing:border-box;}
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 snowman .body {
   width: 200px;
   height: 200px;
   background: #ecf0f1;
-  box-shadow: -13px -8px 0px rgba(0,0,0,0.1) inset;
+  box-shadow: -13px -8px 0px rgba(0, 0, 0, 0.1) inset;
   border-radius: 50%;
   margin-top: -100px;
   position: absolute;
-  right:0;left:0;margin:0 auto;
-  margin-top:270px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  margin-top: 270px;
 }
 
 snowman .body:before {
   width: 100px;
   height: 100px;
   background: #ecf0f1;
-  box-shadow: -5px 0px 0px rgba(0,0,0,0.1) inset;
+  box-shadow: -5px 0px 0px rgba(0, 0, 0, 0.1) inset;
   border-radius: 50%;
   display: inline-block;
   content: "";
   position: relative;
   top: -191px;
   left: 46px;
-  z-index:30;
+  z-index: 30;
 }
 
 snowman .body:after {
   width: 160px;
   height: 160px;
   background: #ecf0f1;
-  box-shadow: -7px -5px 0px rgba(0,0,0,0.1) inset;
+  box-shadow: -7px -5px 0px rgba(0, 0, 0, 0.1) inset;
   border-radius: 50%;
   display: inline-block;
   content: "";
@@ -108,7 +113,7 @@ snowman .body .head {
   height: 0px;
   border-style: solid;
   border-width: 8px 41px 8px 0;
-  border-color: transparent #FA9A20 transparent transparent;
+  border-color: transparent #fa9a20 transparent transparent;
   content: "";
   position: relative;
   top: -229px;
@@ -117,8 +122,8 @@ snowman .body .head {
   -webkit-transform: rotate(10deg);
   -moz-transform: rotate(10deg);
   transform: rotate(10deg);
-  box-shadow: 0px 43px rgba(0,0,0,0.2) inset;
-  z-index:30;
+  box-shadow: 0px 43px rgba(0, 0, 0, 0.2) inset;
+  z-index: 30;
 }
 
 snowman .body .head:before {
@@ -171,10 +176,10 @@ snowman .body .head:after {
   top: 34px;
   left: 15px;
   border-radius: 50% 0% 50% 50%;
-  box-shadow: -4px 0px rgba(0,0,0,0.1) inset;
+  box-shadow: -4px 0px rgba(0, 0, 0, 0.1) inset;
 }
 snowman .body .shadow {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   width: 190px;
   height: 30px;
@@ -210,7 +215,7 @@ snowman .body .shadow {
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
   height: 0;
-  z-index:30;
+  z-index: 30;
 }
 .left-hand:after {
   width: 47px;
@@ -276,20 +281,20 @@ snowman .body .shadow {
 }
 
 snowman .hat {
-top: -253px;
-left: 76px;
--webkit-transform: rotate(10deg);
--moz-transform: rotate(10deg);
-transform: rotate(10deg);
-position: absolute;
-border-radius: 0;
-z-index: 20;
-border-top: 56px solid rgb(37, 37, 37);
-border-left: 10px solid transparent;
-border-right: 10px solid transparent;
-height: 0;
-width: 60px;
-border-bottom: 27px solid rgb(246, 62, 62);
+  top: -253px;
+  left: 76px;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+  position: absolute;
+  border-radius: 0;
+  z-index: 20;
+  border-top: 56px solid rgb(37, 37, 37);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 60px;
+  border-bottom: 27px solid rgb(246, 62, 62);
 }
 
 snowman .buttons {
@@ -330,4 +335,62 @@ snowman .buttons:after {
 h2 {
   position: absolute;
   font-size: 50px;
+}
+
+
+
+/* Fuegos artificales */
+@keyframes firework {
+  0% { 
+    transform: translate(-50%, 60vh);
+    width: 0.5vmin;
+    opacity: 1;
+  }
+  50% { 
+    width: 0.5vmin;
+    opacity: 1;
+  }
+  100% { 
+    width: 45vmin; 
+    opacity: 0; 
+  }
+}
+
+.firework,
+.firework::before,
+.firework::after {
+  --top: 60vh;
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5vmin;
+  aspect-ratio: 1;
+  background:
+    /* random backgrounds */
+    radial-gradient(circle, #ff0 0.2vmin, #0000 0) 50% 00%,
+    radial-gradient(circle, rgb(255, 0, 0) 0.3vmin, #0000 0) 00% 50%,
+    radial-gradient(circle, #ff0 0.5vmin, #0000 0) 50% 99%,
+    radial-gradient(circle, rgb(95, 12, 190) 0.2vmin, #0000 0) 99% 50%,
+    radial-gradient(circle, rgb(85, 71, 207) 0.3vmin, #0000 0) 80% 90%,
+    radial-gradient(circle, rgb(28, 185, 8) 0.5vmin, #0000 0) 95% 90%,
+    radial-gradient(circle, #ff0 0.5vmin, #0000 0) 10% 60%,
+    radial-gradient(circle, rgb(167, 27, 74) 0.2vmin, #0000 0) 31% 80%,
+    radial-gradient(circle, #ff0 0.3vmin, #0000 0) 80% 10%,
+    radial-gradient(circle, rgb(12, 206, 12) 0.2vmin, #0000 0) 90% 23%,
+    radial-gradient(circle, rgb(206, 14, 196) 0.3vmin, #0000 0) 45% 20%,
+    radial-gradient(circle, #ff0 0.5vmin, #0000 0) 13% 24%
+    ;
+  background-size: 0.5vmin 0.5vmin;
+  background-repeat: no-repeat;
+  animation: firework 2s infinite;
+}
+
+.firework::before {
+  transform: translate(-50%, -50%) rotate(25deg) !important; 
+}
+
+.firework::after {
+  transform: translate(-50%, -50%) rotate(-37deg) !important;
 }
