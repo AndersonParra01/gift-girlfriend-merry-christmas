@@ -74,10 +74,14 @@ var Snowflake = (function () {
     };
 
     Snowflake.prototype.draw = function () {
-        this.div.style.transform =
-            this.div.style.MozTransform =
-            this.div.style.webkitTransform =
-            'translate3d(' + this.x + 'px' + ',' + this.y + 'px,0)';
+        if (this.x !== this.lastX || this.y !== this.lastY) {
+            this.div.style.transform =
+                this.div.style.MozTransform =
+                this.div.style.webkitTransform =
+                'translate3d(' + this.x + 'px' + ',' + this.y + 'px,0)';
+            this.lastX = this.x;
+            this.lastY = this.y;
+        }
     };
 
     function update() {
